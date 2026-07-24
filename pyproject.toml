@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "suncoin"
+version = "0.1.0"
+description = "Suncoin - a from-scratch proof-of-work blockchain that rewards solar energy production with a CO2-reduction-backed digital currency."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Azimbek Olimbekov" }]
+keywords = ["blockchain", "cryptocurrency", "proof-of-work", "sha256", "solar", "co2"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Security :: Cryptography",
+]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["flask>=3.0"]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[project.scripts]
+suncoin = "suncoin.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Azimml/Suncoin"
+Repository = "https://github.com/Azimml/Suncoin"
+
+[tool.setuptools.packages.find]
+include = ["suncoin*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
