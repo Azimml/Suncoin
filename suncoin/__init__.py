@@ -8,6 +8,7 @@ idea (reward solar generation, cut CO2 emissions) but implements the ledger
 itself in pure Python instead of an ERC-20 smart contract.
 """
 
+from suncoin.block import Block
 from suncoin.transaction import Transaction
 
 __version__ = "0.1.0"
@@ -16,4 +17,4 @@ __version__ = "0.1.0"
 # roughly the value used in the Suncoin whitepaper (~8.5 tons/household/year).
 CO2_GRAMS_PER_KWH = 475.0
 
-__all__ = ["Transaction", "CO2_GRAMS_PER_KWH", "__version__"]
+__all__ = ["Block", "Transaction", "CO2_GRAMS_PER_KWH", "__version__"]
