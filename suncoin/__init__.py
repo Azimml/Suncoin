@@ -8,13 +8,14 @@ idea (reward solar generation, cut CO2 emissions) but implements the ledger
 itself in pure Python instead of an ERC-20 smart contract.
 """
 
-from suncoin.block import Block
-from suncoin.transaction import Transaction
-
-__version__ = "0.1.0"
-
 # grams of CO2 avoided per kWh of grid electricity displaced by solar,
 # roughly the value used in the Suncoin whitepaper (~8.5 tons/household/year).
 CO2_GRAMS_PER_KWH = 475.0
 
-__all__ = ["Block", "Transaction", "CO2_GRAMS_PER_KWH", "__version__"]
+from suncoin.block import Block  # noqa: E402  (constant must exist before submodules import it)
+from suncoin.blockchain import Blockchain  # noqa: E402
+from suncoin.transaction import Transaction  # noqa: E402
+
+__version__ = "0.1.0"
+
+__all__ = ["Block", "Blockchain", "Transaction", "CO2_GRAMS_PER_KWH", "__version__"]
