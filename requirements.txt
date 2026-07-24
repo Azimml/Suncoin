@@ -1,0 +1,6 @@
+# Core Suncoin blockchain has no third-party runtime dependencies
+# (hashlib and json are part of the Python standard library).
+#
+# The optional HTTP API needs Flask; uncomment or install via extras:
+#   pip install .[api]
+flask>=3.0
